@@ -1,36 +1,41 @@
 
 ---
-title: "15-minute education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China"
+title: "15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China"
 collection: publications
-category: manuscripts
 permalink: /publication/15-minute-education-circle
-excerpt: "First-author research accepted for publication in Cities (2026)."
-venue: "Cities (Accepted)"
-citation: "Accepted for publication in Cities (2026). Full bibliographic details to follow."
+date: 2026-09-02
+venue: "Cities (Elsevier)"
+excerpt: "A multi-stage framework for evaluating educational accessibility and spatial equity in Beijing."
+paperurl: "https://doi.org/10.1016/j.cities.2026.107506"
+citation: 'Zhu, K., Zhu, S., & Yan, X. (2026). 15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China. Cities, Article 107506. https://doi.org/10.1016/j.cities.2026.107506'
 ---
-
-## Overview
-
-This research investigates educational accessibility and spatial inequality within the framework of the 15-minute city, using Beijing, China, as a case study.
-
-The study develops a multi-stage accessibility assessment framework to examine walking access to educational facilities and evaluate spatial disparities in access to educational opportunities.
-
-## Research Methods
-
-- GIS-based spatial analysis
-- Pedestrian network accessibility modelling
-- Multi-stage educational accessibility assessment
-- Spatial inequality measurement
-- Facility reallocation and optimization scenarios
 
 ## Publication Information
 
-**Journal:** Cities
+**Authors:** Keyu Zhu, Shuaiang Zhu, Xiaorui Yan
 
-**Status:** Accepted for publication (2026)
+**Journal:** Cities (Elsevier)
 
-**Contribution:** First Author
+**Published online:** September 2, 2026
 
-**Study Area:** Beijing, China
+**Article number:** 107506
 
-**DOI:** To be updated upon publication.
+**DOI:** [10.1016/j.cities.2026.107506](https://doi.org/10.1016/j.cities.2026.107506)
+
+**Status:** Published online (In Press, Corrected Proof)
+
+## Abstract
+
+This study introduces the concept of the 15-min education circle (15-min EC) to evaluate integrated walking accessibility to kindergartens, primary schools, and secondary schools in Beijing.
+
+Using GIS-based pedestrian network analysis, population-weighted accessibility measures, and spatial regression models, the research identifies substantial spatial inequalities in educational accessibility.
+
+An ideal-city benchmark further suggests that improved spatial matching between existing schools and the school-age population could reduce service-pressure inequality by 55.2%.
+
+## Keywords
+
+15-min education circle; Walking accessibility; Educational equity; Service pressure; Ideal-city benchmark
+
+## Links
+
+[Read the published article](https://doi.org/10.1016/j.cities.2026.107506)
