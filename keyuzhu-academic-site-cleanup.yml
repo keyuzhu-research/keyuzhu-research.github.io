@@ -1,0 +1,319 @@
+name: Clean and personalize Keyu Zhu academic website
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/keyuzhu-academic-site-cleanup.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Remove template demos and repair academic pages
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+
+          ROOT = Path('.')
+
+          def write(path, content):
+              p = ROOT / path
+              p.parent.mkdir(parents=True, exist_ok=True)
+              p.write_text(content.strip() + '\n', encoding='utf-8')
+              print('Updated:', p)
+
+          def delete(path):
+              p = ROOT / path
+              if p.is_file():
+                  p.unlink()
+                  print('Removed demo:', p)
+
+          # Keep personal details, scientific record and real images. Fix only dummy social links.
+          config_path = ROOT / '_config.yml'
+          config = config_path.read_text(encoding='utf-8')
+          replacements = {
+              'googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"': 'googlescholar    :',
+              'pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"': 'pubmed           :',
+              'github           : "academicpages"': 'github           : "keyuzhu-research"',
+              'bluesky          : "bsky.app" # Replace this with you Bluesky username': 'bluesky          :',
+              'og_image                 : og-image.png': 'og_image                 :',
+          }
+          for before, after in replacements.items():
+              config = config.replace(before, after)
+          config_path.write_text(config, encoding='utf-8')
+          print('Updated: _config.yml (removed sample accounts)')
+
+          write('_data/navigation.yml', '''---
+          main:
+            - title: "About"
+              url: /
+            - title: "Publications"
+              url: /publications/
+            - title: "Research"
+              url: /research/
+            - title: "Portfolio"
+              url: /portfolio/
+            - title: "CV"
+              url: /cv/
+          ''')
+
+          write('_pages/about.md', '''---
+          permalink: /
+          title: "About Me"
+          author_profile: true
+          redirect_from:
+            - /about/
+            - /about.html
+          ---
+
+          I am **Keyu Zhu**, a master's student in Design (Architectural Art and Design) at the **School of Design, East China Normal University**, Shanghai. I expect to graduate in June 2027. I previously studied Environmental Design at Nanjing Forestry University.
+
+          My research focuses on **urban accessibility, spatial equity, and urban planning**. I use Geographic Information Systems (GIS), pedestrian network modelling, spatial statistics, and scenario-based analysis to understand how the distribution of urban resources influences people's access to opportunities.
+
+          ## Research Interests
+
+          - 15-minute cities and proximity-based planning
+          - Educational and public-service accessibility
+          - Urban spatial equity and inequality
+          - GIS, walking-network analysis, and spatial statistics
+          - Facility allocation and planning optimization
+
+          ## Selected Publication
+
+          **Zhu, K.**, Zhu, S., & Yan, X. (2026). 15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China. *Cities*, Article 107506.
+
+          [Read the published article](https://doi.org/10.1016/j.cities.2026.107506) · [All publications](/publications/)
+
+          ## Research Experience
+
+          **15-Minute Education Circle — Beijing.** Developed an integrated framework for walking accessibility to kindergartens, primary schools, and secondary schools. Evaluated spatial disparities and a fixed-supply reallocation benchmark.
+
+          **Green Space Accessibility and Housing Prices — Shanghai.** Conducted GIS network analysis and spatial econometric modelling to explore the relationship between green-space accessibility and housing prices.
+
+          **Lifelong Learning Accessibility.** Participated in a four-city study of older adults' access to lifelong learning facilities.
+
+          [Explore research projects](/research/) · [View design portfolio](/portfolio/) · [Academic CV](/cv/)
+
+          ## Contact
+
+          - [ORCID: 0009-0004-9594-2611](https://orcid.org/0009-0004-9594-2611)
+          - [GitHub: keyuzhu-research](https://github.com/keyuzhu-research)
+          ''')
+
+          write('_pages/research.md', '''---
+          layout: single
+          title: "Research Projects"
+          permalink: /research/
+          author_profile: true
+          ---
+
+          My work explores how the spatial distribution of urban resources shapes unequal access to opportunities. I primarily use GIS, walking-network accessibility modelling, spatial statistics and planning simulations.
+
+          ## 15-Minute Education Circles and Spatial Equity
+
+          **Study area:** Beijing, China  
+          **Methods:** GIS; pedestrian-network accessibility; population-weighted assessment; spatial regression; fixed-supply redistribution scenarios.
+
+          I developed a multi-stage accessibility framework covering kindergartens, primary schools, and secondary schools within a 15-minute walking threshold. The analysis identified substantial core–periphery differences. A fixed-supply ideal-city benchmark suggested a potential **55.2% reduction in service-pressure inequality** through improved spatial matching between school capacity and demand.
+
+          **Published output:** Zhu, K., Zhu, S., & Yan, X. (2026), *Cities*, Article 107506. [Read the paper](https://doi.org/10.1016/j.cities.2026.107506).
+
+          ## Urban Green-Space Accessibility and Housing Prices
+
+          **Study area:** Shanghai, China  
+          **Methods:** GIS; pedestrian network analysis; OLS and spatial econometric modelling.
+
+          This research experience examines the association between network-based access to urban green space and residential property prices. The work contributes analytical experience in accessibility measurement and spatial dependence.
+
+          ## Lifelong Learning Accessibility for Older Adults
+
+          **Study scope:** Four Chinese cities  
+          **Focus:** Access to lifelong learning facilities for older residents.
+
+          Participated in research on the availability and accessibility of lifelong learning opportunities for older adults, supported by academic supervision.
+
+          ## Design Background
+
+          My background in environmental design and architectural art informs my interest in the relationship between spatial form, lived experience, and urban opportunity. [Browse my design portfolio](/portfolio/).
+          ''')
+
+          write('_pages/cv.md', '''---
+          layout: archive
+          title: "Academic CV"
+          permalink: /cv/
+          author_profile: true
+          redirect_from:
+            - /resume
+          ---
+
+          ## Keyu Zhu
+
+          **East China Normal University** · Master's Student · Shanghai, China
+
+          ## Education
+
+          - **2024–2027 (expected):** Master's program in Design (Architectural Art and Design), School of Design, East China Normal University.
+          - **Undergraduate degree:** Environmental Design, Nanjing Forestry University.
+
+          ## Research Interests
+
+          Urban accessibility; spatial equity; 15-minute cities; GIS and spatial analysis; public-service facility planning; spatial optimization.
+
+          ## Selected Publication
+
+          **Zhu, K.**, Zhu, S., & Yan, X. (2026). 15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China. *Cities*, Article 107506. [DOI](https://doi.org/10.1016/j.cities.2026.107506).
+
+          ## Research Experience
+
+          - Educational walking accessibility and multi-stage 15-minute education circles in Beijing.
+          - GIS and spatial econometric assessment of green space accessibility and housing prices in Shanghai.
+          - Four-city research on lifelong learning facility accessibility for older adults.
+
+          ## Research Methods
+
+          GIS; pedestrian network modelling; OSRM; spatial statistics and regression; scenario-based facility reallocation.
+
+          ## Profiles and Portfolio
+
+          - [ORCID](https://orcid.org/0009-0004-9594-2611)
+          - [GitHub](https://github.com/keyuzhu-research)
+          - [Design portfolio](/portfolio/)
+
+          {% assign cv_pdf = site.static_files | where: "path", "/files/cv.pdf" | first %}
+          {% if cv_pdf %}
+          [Download my CV (PDF)](/files/cv.pdf)
+          {% endif %}
+          ''')
+
+          write('_pages/portfolio.html', '''---
+          layout: single
+          title: "Design Portfolio"
+          permalink: /portfolio/
+          author_profile: false
+          classes: wide
+          ---
+
+          <p>Selected works in architectural and environmental design. My portfolio reflects my interests in spatial experience, architectural design and research-led design approaches.</p>
+
+          {% assign portfolio_pdf = site.static_files | where: "path", "/files/portfolio.pdf" | first %}
+          {% if portfolio_pdf %}
+          <div style="width:100%;height:85vh;min-height:600px;border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+            <iframe src="{{ '/files/portfolio.pdf' | relative_url }}#toolbar=1&amp;navpanes=0&amp;view=FitH" width="100%" height="100%" style="border:none;" title="Keyu Zhu Design Portfolio"></iframe>
+          </div>
+          <p style="margin-top:1rem;"><a href="{{ '/files/portfolio.pdf' | relative_url }}" target="_blank" rel="noopener">Open or download the full portfolio (PDF)</a></p>
+          {% else %}
+          <p><strong>Portfolio preview coming soon.</strong> Once <code>portfolio.pdf</code> is uploaded into the repository's <code>files</code> folder, the embedded PDF reader will appear here automatically.</p>
+          {% endif %}
+          ''')
+
+          # Preserve publication data; repair its Jekyll front matter and category.
+          publication = ROOT / '_publications/cities-education-circle.md'
+          if publication.exists():
+              data = publication.read_text(encoding='utf-8').lstrip('\ufeff\r\n ')
+              if 'category: manuscripts' not in data:
+                  data = data.replace('collection: publications\n', 'collection: publications\ncategory: manuscripts\n', 1)
+              publication.write_text(data, encoding='utf-8')
+              print('Fixed publication metadata:', publication)
+
+          # Remove only known Academic Pages examples, not files created by the user.
+          examples = [
+              '_publications/2009-10-01-paper-title-number-1.md',
+              '_publications/2010-10-01-paper-title-number-2.md',
+              '_publications/2015-10-01-paper-title-number-3.md',
+              '_publications/2024-02-17-paper-title-number-4.md',
+              '_publications/2025-06-08-paper-title-number-5.md',
+              '_portfolio/portfolio-1.md', '_portfolio/portfolio-2.html',
+              '_posts/2012-08-14-blog-post-1.md',
+              '_posts/2013-08-14-blog-post-2.md',
+              '_posts/2014-08-14-blog-post-3.md',
+              '_posts/2015-08-14-blog-post-4.md',
+              '_posts/2199-01-01-future-post.md',
+              '_talks/2012-03-01-talk-1.md',
+              '_talks/2013-03-01-tutorial-1.md',
+              '_talks/2014-02-01-talk-2.md',
+              '_talks/2014-03-01-talk-3.md',
+              '_teaching/2014-spring-teaching-1.md',
+              '_teaching/2015-spring-teaching-2.md',
+              '_pages/markdown.md',
+              '_pages/archive-layout-with-content.md',
+              '_pages/non-menu-page.md',
+              '_pages/talkmap.html',
+              '_pages/talks.html',
+              '_pages/teaching.html',
+              'files/bibtex1.bib',
+              'files/paper1.pdf', 'files/paper2.pdf', 'files/paper3.pdf',
+              'files/slides1.pdf', 'files/slides2.pdf', 'files/slides3.pdf',
+          ]
+          for p in examples:
+              delete(p)
+
+          # Find PDFs bearing the portfolio's name when it was previously uploaded
+          # outside files/; don't assume unrelated PDF files are the design portfolio.
+          portfolio = ROOT / 'files/portfolio.pdf'
+          if not portfolio.exists():
+              candidates = sorted(
+                  p for p in ROOT.rglob('*.pdf')
+                  if p.is_file() and (('portfolio' in p.name.lower()) or ('作品集' in p.name))
+                  and p.resolve() != portfolio.resolve()
+                  and not p.is_relative_to(ROOT / '.git')
+              )
+              if len(candidates) == 1:
+                  portfolio.parent.mkdir(exist_ok=True)
+                  shutil.copy2(candidates[0], portfolio)
+                  print('Copied existing portfolio PDF from:', candidates[0])
+              else:
+                  print('No unambiguous portfolio PDF located; upload files/portfolio.pdf separately.')
+          else:
+              print('Found portfolio PDF:', portfolio)
+
+          write('README.md', '''# Keyu Zhu — Academic Website
+
+          Personal academic website of Keyu Zhu, master's student at East China Normal University.
+
+          **Website:** https://keyuzhu-research.github.io/
+
+          **Research:** Urban accessibility, spatial equity, 15-minute cities, and GIS.
+
+          **Selected publication:** [Cities, 2026, Article 107506](https://doi.org/10.1016/j.cities.2026.107506).
+
+          **ORCID:** https://orcid.org/0009-0004-9594-2611
+
+          This site is based on the open-source Academic Pages Jekyll template. Academic Pages template and its original license are retained in the repository history and LICENSE file.
+
+          To add the design portfolio PDF, upload it as `files/portfolio.pdf`. The `/portfolio/` page will display it automatically.
+
+          To add a downloadable CV, upload it as `files/cv.pdf`.
+          ''')
+          print('Site cleanup complete; GitHub Actions will commit the results.')
+          PY
+
+      - name: Commit and push the repaired website
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Site was already clean. No changes needed."
+          else
+            git commit -m "Personalize academic website and remove template examples"
+            git push origin HEAD:master
+          fi
+
+      - name: Trigger Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run jekyll.yml --ref master
