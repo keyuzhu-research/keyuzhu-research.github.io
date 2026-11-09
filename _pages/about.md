@@ -12,17 +12,18 @@ redirect_from:
 
 I am **Keyu Zhu**, a master's student at the School of Design, East China Normal University, Shanghai, China. I expect to graduate in June 2027.
 
-My research focuses on **urban accessibility, spatial equity, and urban planning**. I am particularly interested in how the spatial distribution of urban resources shapes people's access to opportunities.
+My research focuses on **urban accessibility, spatial equity, and urban planning**. I am particularly interested in understanding how the distribution of urban resources shapes unequal access to opportunities.
 
-My work combines Geographic Information Systems (GIS), pedestrian network analysis, spatial statistics, and spatial optimization.
+My research combines GIS, pedestrian network analysis, spatial statistics, and spatial optimization to investigate urban accessibility and evaluate planning interventions.
 
 ## Research Interests
 
 - 15-Minute Cities
 - Urban Accessibility and Spatial Equity
-- Public Service Facilities
+- Public Service Accessibility
 - GIS and Spatial Analysis
-- Urban Planning and Spatial Optimization
+- Urban Planning and Optimization
+- Urban Opportunities and Residential Inequality
 
 ## Education
 
@@ -35,20 +36,27 @@ Environmental Design
 
 ## Selected Publication
 
-My first-author research on 15-minute education circles and spatial equity has been accepted for publication in ***Cities***.
+**Zhu, K., Zhu, S., & Yan, X. (2026).**
 
-**Status:** Accepted  
-**Role:** First Author
+15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China.
 
-## Research Projects
+*Cities*. Article 107506.
 
-### Educational Accessibility and 15-Minute Cities
+[Read the paper](https://doi.org/10.1016/j.cities.2026.107506)
 
-GIS-based accessibility analysis of educational facilities, with an emphasis on spatial equity and facility reallocation.
+## Research Experience
 
-### Green Space Accessibility and Housing Prices
+### Educational Accessibility and Spatial Equity
 
-Spatial analysis of green space accessibility and residential property prices in Shanghai.
+Developed a GIS-based framework to evaluate walking accessibility to educational facilities across different educational stages and explored facility reallocation strategies to improve spatial equity.
+
+### Urban Green Space Accessibility and Housing Prices
+
+Investigated relationships between urban green space accessibility and residential property prices in Shanghai using GIS and spatial econometric methods.
+
+### Lifelong Learning Accessibility
+
+Participated in research examining access to lifelong learning facilities for older adults across four Chinese cities.
 
 ## Contact
 
