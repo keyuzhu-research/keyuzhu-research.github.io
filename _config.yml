@@ -23,7 +23,7 @@ repository               : "keyuzhu-research/keyuzhu-research.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 
 author:
-  avatar           :
+  avatar           : "照片.jpg"
   name             : "Keyu Zhu"
   bio              : "Master's Student | Urban Accessibility & Spatial Equity"
   location         : "Shanghai, China"
@@ -37,7 +37,7 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0009-0004-9594-2611"
   semantic         : # URL
   ssrn             : # URL
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
