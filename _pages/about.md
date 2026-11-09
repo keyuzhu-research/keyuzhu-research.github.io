@@ -1,4 +1,3 @@
-
 ---
 permalink: /
 title: "About Me"
@@ -8,63 +7,35 @@ redirect_from:
   - /about.html
 ---
 
-## About Me
+I am **Keyu Zhu**, a master's student in Design (Architectural Art and Design) at the **School of Design, East China Normal University**, Shanghai. I expect to graduate in June 2027. I previously studied Environmental Design at Nanjing Forestry University.
 
-I am **Keyu Zhu**, a master's student at the School of Design, East China Normal University, Shanghai, China. I expect to graduate in June 2027.
-
-My research focuses on **urban accessibility, spatial equity, and urban planning**. I am particularly interested in understanding how the distribution of urban resources shapes unequal access to opportunities.
-
-My research combines GIS, pedestrian network analysis, spatial statistics, and spatial optimization to investigate urban accessibility and evaluate planning interventions.
+My research focuses on **urban accessibility, spatial equity, and urban planning**. I use Geographic Information Systems (GIS), pedestrian network modelling, spatial statistics, and scenario-based analysis to understand how the distribution of urban resources influences people's access to opportunities.
 
 ## Research Interests
 
-- 15-Minute Cities
-- Urban Accessibility and Spatial Equity
-- Public Service Accessibility
-- GIS and Spatial Analysis
-- Urban Planning and Optimization
-- Urban Opportunities and Residential Inequality
-
-## Education
-
-**East China Normal University**  
-Master's Student in Design (Architectural Art and Design)  
-2024–2027 (Expected)
-
-**Nanjing Forestry University**  
-Environmental Design
+- 15-minute cities and proximity-based planning
+- Educational and public-service accessibility
+- Urban spatial equity and inequality
+- GIS, walking-network analysis, and spatial statistics
+- Facility allocation and planning optimization
 
 ## Selected Publication
 
-**Zhu, K., Zhu, S., & Yan, X. (2026).**
+**Zhu, K.**, Zhu, S., & Yan, X. (2026). 15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China. *Cities*, Article 107506.
 
-15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China.
-
-*Cities*. Article 107506.
-
-[Read the paper](https://doi.org/10.1016/j.cities.2026.107506)
+[Read the published article](https://doi.org/10.1016/j.cities.2026.107506) · [All publications](/publications/)
 
 ## Research Experience
 
-### Educational Accessibility and Spatial Equity
+**15-Minute Education Circle — Beijing.** Developed an integrated framework for walking accessibility to kindergartens, primary schools, and secondary schools. Evaluated spatial disparities and a fixed-supply reallocation benchmark.
 
-Developed a GIS-based framework to evaluate walking accessibility to educational facilities across different educational stages and explored facility reallocation strategies to improve spatial equity.
+**Green Space Accessibility and Housing Prices — Shanghai.** Conducted GIS network analysis and spatial econometric modelling to explore the relationship between green-space accessibility and housing prices.
 
-### Urban Green Space Accessibility and Housing Prices
+**Lifelong Learning Accessibility.** Participated in a four-city study of older adults' access to lifelong learning facilities.
 
-Investigated relationships between urban green space accessibility and residential property prices in Shanghai using GIS and spatial econometric methods.
-
-### Lifelong Learning Accessibility
-
-Participated in research examining access to lifelong learning facilities for older adults across four Chinese cities.
-
-## Design Portfolio
-
-My design portfolio presents selected academic and design projects, reflecting my background in environmental design, architectural design, and spatial research.
-
-[**View My Design Portfolio (PDF)**](/files/portfolio.pdf)
+[Explore research projects](/research/) · [View design portfolio](/portfolio/) · [Academic CV](/cv/)
 
 ## Contact
 
-- [ORCID](https://orcid.org/0009-0004-9594-2611)
-- [GitHub](https://github.com/keyuzhu-research)
+- [ORCID: 0009-0004-9594-2611](https://orcid.org/0009-0004-9594-2611)
+- [GitHub: keyuzhu-research](https://github.com/keyuzhu-research)

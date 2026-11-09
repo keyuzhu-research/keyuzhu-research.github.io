@@ -1,7 +1,7 @@
-
 ---
 title: "15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China"
 collection: publications
+category: manuscripts
 permalink: /publication/15-minute-education-circle
 date: 2026-09-02
 venue: "Cities (Elsevier)"

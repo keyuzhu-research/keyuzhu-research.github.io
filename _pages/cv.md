@@ -1,64 +1,46 @@
 ---
 layout: archive
-title: "CV"
+title: "Academic CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+## Keyu Zhu
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+**East China Normal University** · Master's Student · Shanghai, China
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## Education
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+- **2024–2027 (expected):** Master's program in Design (Architectural Art and Design), School of Design, East China Normal University.
+- **Undergraduate degree:** Environmental Design, Nanjing Forestry University.
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+## Research Interests
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+Urban accessibility; spatial equity; 15-minute cities; GIS and spatial analysis; public-service facility planning; spatial optimization.
+
+## Selected Publication
+
+**Zhu, K.**, Zhu, S., & Yan, X. (2026). 15-min education circle: Multi-stage accessibility assessment and inequality-reduction capacity—A case study of Beijing, China. *Cities*, Article 107506. [DOI](https://doi.org/10.1016/j.cities.2026.107506).
+
+## Research Experience
+
+- Educational walking accessibility and multi-stage 15-minute education circles in Beijing.
+- GIS and spatial econometric assessment of green space accessibility and housing prices in Shanghai.
+- Four-city research on lifelong learning facility accessibility for older adults.
+
+## Research Methods
+
+GIS; pedestrian network modelling; OSRM; spatial statistics and regression; scenario-based facility reallocation.
+
+## Profiles and Portfolio
+
+- [ORCID](https://orcid.org/0009-0004-9594-2611)
+- [GitHub](https://github.com/keyuzhu-research)
+- [Design portfolio](/portfolio/)
+
+{% assign cv_pdf = site.static_files | where: "path", "/files/cv.pdf" | first %}
+{% if cv_pdf %}
+[Download my CV (PDF)](/files/cv.pdf)
+{% endif %}
