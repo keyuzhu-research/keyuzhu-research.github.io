@@ -58,6 +58,12 @@ Investigated relationships between urban green space accessibility and residenti
 
 Participated in research examining access to lifelong learning facilities for older adults across four Chinese cities.
 
+## Design Portfolio
+
+My design portfolio presents selected academic and design projects, reflecting my background in environmental design, architectural design, and spatial research.
+
+[**View My Design Portfolio (PDF)**](/files/portfolio.pdf)
+
 ## Contact
 
 - [ORCID](https://orcid.org/0009-0004-9594-2611)
